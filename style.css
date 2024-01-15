@@ -1,0 +1,129 @@
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap');
+
+  :root{
+    --violet: hsl(263, 55%, 52%);
+
+    --light-gray: hsl(0, 0%, 81%);
+
+    --grayish-blue: hsl(217, 19%, 35%);
+
+    --blackish-blue: hsl(219, 29%, 14%);
+
+    --white: hsl(0, 0%, 100%)
+  }
+
+  *,
+  *::after,
+  *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    padding: 2rem;
+
+    background-color: var(--light-gray);
+  }
+
+  .container{
+    display: grid;
+    gap: 1.5rem;
+  }
+  .item{
+    padding: 1.5rem;
+    border-radius: 10px;
+
+    display: grid;
+    gap: 20px;
+
+    color: white;
+  }
+
+  .item1{
+    background-color: var(--violet);
+    background-image: url(bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+  .item2{
+    background-color: var(--grayish-blue);
+  }
+
+  .item3{
+    background-color: var(--white);
+    color: var(--blackish-blue);
+  }
+
+  .item4{
+    background-color: var(--blackish-blue);
+  }
+
+  .item5{
+    background-color: var(--white);
+    color: var(--blackish-blue);
+  }
+
+  .item .profile{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .profile img{
+    border-radius: 50%;
+    width: 40px;
+    border: 1px solid var(--light-gray);
+  }
+
+  .name p:first-child{
+    font-weight: 700;
+    font-size: 19px;
+  }
+
+  .name p:last-child{
+    opacity: .5;
+  }
+
+  .item p:last-child{
+    opacity: .5;
+  }
+
+  @media (min-width: 40em){
+    .container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .item1{
+        grid-column: span 2;
+    }
+
+    .item4{
+        grid-column: span 2;
+    }
+
+    .item5{
+        grid-column: span 2;
+    }
+}
+
+
+  @media (min-width: 70em){
+    .container{
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .item1{
+        grid-column: span 2;
+    }
+
+    .item4{
+        grid-column: span 2;
+    }
+
+    .item5{
+        grid-column: 4 / 5;
+        grid-row: 1 / 3;
+    }
+  }
